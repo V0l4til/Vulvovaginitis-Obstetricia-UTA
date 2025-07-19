@@ -131,12 +131,16 @@
             border-left: 5px solid var(--primary-color);
             border-radius: 5px;
             display: flex;
-            align-items: center;
+            align-items: flex-start; /* Alinea el icono con la parte superior del texto */
         }
         .symptom-list .icon, .prevention-list .icon {
             font-size: 1.5em;
             margin-right: 15px;
             color: var(--primary-color);
+            flex-shrink: 0; /* Evita que el icono se encoja */
+        }
+        .symptom-list li div, .prevention-list li div {
+            flex-grow: 1; /* Permite que el contenedor de texto ocupe el espacio */
         }
         .medical-term {
             background-color: #e1bee7;
@@ -227,16 +231,16 @@
 
         <section id="candida" class="content-section active">
             <h2><span class="icon">🍄</span>Vulvovaginitis por Candida (Candidiasis)</h2>
-            <p>Es la infección vaginal por hongos más conocida. Es causada por un hongo llamado <strong>Candida albicans</strong> en la mayoría de los casos. Es importante saber que este hongo vive normally en nuestro cuerpo en pequeñas cantidades, el problema empieza cuando crece más de la cuenta.</p>
+            <p>Es la infección vaginal por hongos más conocida. Es causada por un hongo llamado <strong>Candida albicans</strong> en la mayoría de los casos. Es importante saber que este hongo vive normalmente en nuestro cuerpo en pequeñas cantidades, el problema empieza cuando crece más de la cuenta.</p>
 
             <div class="flex-container">
                 <div class="flex-item">
                     <h3>Cuadro Clínico: ¿Qué se siente?</h3>
                     <ul class="symptom-list">
-                        <li><span class="icon">🔥</span><strong>Picazón Intensa:</strong> Es el síntoma principal y más molesto. Puede ser muy fuerte, especialmente por la noche, y afectar tanto la vulva como la vagina.</li>
-                        <li><span class="icon">⚪</span><strong>Flujo Blanco y Espeso:</strong> El flujo no suele tener olor. Su apariencia es muy característica: blanco, espeso y con grumos, a menudo descrito como "leche cortada" o "requesón".</li>
-                        <li><span class="icon">💧</span><strong>Ardor e Irritación:</strong> Una sensación de quemazón que puede empeorar al orinar o durante las relaciones sexuales (<span class="medical-term">dispareunia<span class="explanation">Término médico para el dolor durante las relaciones sexuales.</span></span>).</li>
-                        <li><span class="icon">🔴</span><strong>Inflamación y Enrojecimiento:</strong> Al observar la zona, se puede ver la vulva y la vagina enrojecidas e hinchadas (<span class="medical-term">eritema y edema<span class="explanation">Eritema es enrojecimiento y edema es hinchazón. Son signos clásicos de inflamación.</span></span>). A veces, por el rascado, pueden aparecer pequeñas heridas.</li>
+                        <li><span class="icon">🔥</span><div><strong>Picazón Intensa:</strong> Es el síntoma principal y más molesto. Puede ser muy fuerte, especialmente por la noche, y afectar tanto la vulva como la vagina.</div></li>
+                        <li><span class="icon">⚪</span><div><strong>Flujo Blanco y Espeso:</strong> El flujo no suele tener olor. Su apariencia es muy característica: blanco, espeso y con grumos, a menudo descrito como "leche cortada" o "requesón".</div></li>
+                        <li><span class="icon">💧</span><div><strong>Ardor e Irritación:</strong> Una sensación de quemazón que puede empeorar al orinar o durante las relaciones sexuales (<span class="medical-term">dispareunia<span class="explanation">Término médico para el dolor durante las relaciones sexuales.</span></span>).</div></li>
+                        <li><span class="icon">🔴</span><div><strong>Inflamación y Enrojecimiento:</strong> Al observar la zona, se puede ver la vulva y la vagina enrojecidas e hinchadas (<span class="medical-term">eritema y edema<span class="explanation">Eritema es enrojecimiento y edema es hinchazón. Son signos clásicos de inflamación.</span></span>). A veces, por el rascado, pueden aparecer pequeñas heridas.</div></li>
                     </ul>
                 </div>
                 <div class="flex-item">
@@ -260,10 +264,10 @@
                 <div class="flex-item">
                     <h3>Cuadro Clínico: ¿Cuáles son las señales?</h3>
                     <ul class="symptom-list">
-                        <li><span class="icon">🟢</span><strong>Flujo Anormal:</strong> El flujo es el protagonista. Suele ser abundante, más líquido, de color <strong>amarillo-verdoso</strong> y a veces con espuma o burbujas.</li>
-                        <li><span class="icon">👃</span><strong>Mal Olor:</strong> A diferencia de la candidiasis, este flujo casi siempre viene acompañado de un olor desagradable.</li>
-                        <li><span class="icon">💥</span><strong>Inflamación Severa:</strong> Provoca picazón y ardor muy intensos en la vulva y vagina. El enrojecimiento y la hinchazón son bastante notorios.</li>
-                        <li><span class="icon">🍓</span><strong>Signo de "Cuello en Fresa":</strong> En algunos casos, el médico puede observar puntitos rojos en el cuello del útero y la vagina, un signo muy específico llamado <span class="medical-term">colpitis en fresa<span class="explanation">Inflamación de la vagina con pequeñas hemorragias puntiformes que le dan un aspecto similar a una fresa. Solo se ve en un examen ginecológico.</span></span>.</li>
+                        <li><span class="icon">🟢</span><div><strong>Flujo Anormal:</strong> El flujo es el protagonista. Suele ser abundante, más líquido, de color <strong>amarillo-verdoso</strong> y a veces con espuma o burbujas.</div></li>
+                        <li><span class="icon">👃</span><div><strong>Mal Olor:</strong> A diferencia de la candidiasis, este flujo casi siempre viene acompañado de un olor desagradable.</div></li>
+                        <li><span class="icon">💥</span><div><strong>Inflamación Severa:</strong> Provoca picazón y ardor muy intensos en la vulva y vagina. El enrojecimiento y la hinchazón son bastante notorios.</div></li>
+                        <li><span class="icon">🍓</span><div><strong>Signo de "Cuello en Fresa":</strong> En algunos casos, el médico puede observar puntitos rojos en el cuello del útero y la vagina, un signo muy específico llamado <span class="medical-term">colpitis en fresa<span class="explanation">Inflamación de la vagina con pequeñas hemorragias puntiformes que le dan un aspecto similar a una fresa. Solo se ve en un examen ginecológico.</span></span>.</div></li>
                     </ul>
                 </div>
                 <div class="flex-item">
@@ -317,26 +321,26 @@
                 <div class="flex-item">
                     <h4>Para AMBAS condiciones:</h4>
                     <ul class="prevention-list">
-                        <li><span class="icon">🌿</span><strong>Higiene Íntima Suave:</strong> Usa jabones neutros solo en la parte externa (la vulva). ¡Nunca hagas duchas vaginales! Alteran tu defensa natural.</li>
-                        <li><span class="icon">🌬️</span><strong>Evita la Humedad:</strong> Sécate muy bien después de la ducha o de nadar. No te quedes con el traje de baño húmedo o la ropa de ejercicio sudada por mucho tiempo.</li>
-                        <li><span class="icon">👕</span><strong>Prefiere Ropa de Algodón:</strong> La ropa interior de algodón permite que la piel respire. Evita materiales sintéticos y ropa muy ajustada que guardan calor y humedad.</li>
+                        <li><span class="icon">🌿</span><div><strong>Higiene Íntima Suave:</strong> Usa jabones neutros solo en la parte externa (la vulva). ¡Nunca hagas duchas vaginales! Alteran tu defensa natural.</div></li>
+                        <li><span class="icon">🌬️</span><div><strong>Evita la Humedad:</strong> Sécate muy bien después de la ducha o de nadar. No te quedes con el traje de baño húmedo o la ropa de ejercicio sudada por mucho tiempo.</div></li>
+                        <li><span class="icon">👕</span><div><strong>Prefiere Ropa de Algodón:</strong> La ropa interior de algodón permite que la piel respire. Evita materiales sintéticos y ropa muy ajustada que guardan calor y humedad.</div></li>
                     </ul>
                 </div>
                 <div class="flex-item">
                     <h4>Específico para TRICOMONIASIS (y otras ITS):</h4>
                     <ul class="prevention-list">
-                         <li><span class="icon">🛡️</span><strong>Usa Preservativo (Condón):</strong> Es la forma más eficaz de prevenir la transmisión. Úsalo siempre y correctamente en todo tipo de contacto sexual.</li>
-                        <li><span class="icon">❤️</span><strong>Tratamiento en Pareja(s):</strong> Si te diagnostican, tu(s) pareja(s) sexual(es) deben tratarse también, sí o sí. Es la única manera de cortar el ciclo de reinfección.</li>
-                        <li><span class="icon">🗣️</span><strong>Comunicación y Abstinencia:</strong> Habla con tus parejas para que se hagan un chequeo. Evita las relaciones sexuales hasta que todos hayan completado el tratamiento.</li>
+                         <li><span class="icon">🛡️</span><div><strong>Usa Preservativo (Condón):</strong> Es la forma más eficaz de prevenir la transmisión. Úsalo siempre y correctamente en todo tipo de contacto sexual.</div></li>
+                        <li><span class="icon">❤️</span><div><strong>Tratamiento en Pareja(s):</strong> Si te diagnostican, tu(s) pareja(s) sexual(es) deben tratarse también, sí o sí. Es la única manera de cortar el ciclo de reinfección.</div></li>
+                        <li><span class="icon">🗣️</span><div><strong>Comunicación y Abstinencia:</strong> Habla con tus parejas para que se hagan un chequeo. Evita las relaciones sexuales hasta que todos hayan completado el tratamiento.</div></li>
                     </ul>
                 </div>
             </div>
              <h3>Factores de Riesgo para Candidiasis</h3>
              <p>Algunas situaciones pueden hacerte más propensa a tener una infección por hongos:</p>
              <ul class="prevention-list">
-                 <li><span class="icon">💊</span><strong>Uso de Antibióticos:</strong> Pueden eliminar las bacterias "buenas" que mantienen a raya a los hongos. Tómalos solo si te los receta un médico.</li>
-                 <li><span class="icon">🍬</span><strong>Diabetes no Controlada:</strong> El exceso de azúcar en el cuerpo favorece el crecimiento de la Candida.</li>
-                 <li><span class="icon">📉</span><strong>Sistema Inmune Débil:</strong> El uso de corticoides o tener defensas bajas puede facilitar la infección.</li>
+                 <li><span class="icon">💊</span><div><strong>Uso de Antibióticos:</strong> Pueden eliminar las bacterias "buenas" que mantienen a raya a los hongos. Tómalos solo si te los receta un médico.</div></li>
+                 <li><span class="icon">🍬</span><div><strong>Diabetes no Controlada:</strong> El exceso de azúcar en el cuerpo favorece el crecimiento de la Candida.</div></li>
+                 <li><span class="icon">📉</span><div><strong>Sistema Inmune Débil:</strong> El uso de corticoides o tener defensas bajas puede facilitar la infección.</div></li>
              </ul>
         </section>
 
