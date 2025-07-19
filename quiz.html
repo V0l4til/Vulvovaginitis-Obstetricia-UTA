@@ -6,15 +6,16 @@
     <title>Quiz: Mito o Verdad - Vulvovaginitis</title>
     <style>
         :root {
-            --primary-color: #c62828; /* Rojo Principal */
-            --secondary-color: #ffebee; /* Rojo Pálido */
-            --text-color: #333;
+            --primary-color: #B71C1C;      /* Rojo Oscuro Principal */
+            --primary-hover: #D32F2F;     /* Rojo Medio para Hover/Gradiente */
+            --secondary-color: #FFEBEE;   /* Rojo Pálido para Fondos */
+            --text-color: #212121;       /* Gris Oscuro para Texto */
             --white-color: #ffffff;
             --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             --success-color: #2e7d32;
         }
-        body { font-family: var(--font-family); line-height: 1.6; margin: 0; padding: 0; background-color: #f9f9f9; color: var(--text-color); }
-        .header { background: linear-gradient(135deg, var(--primary-color), #ef5350); color: var(--white-color); padding: 2rem 1rem; text-align: center; }
+        body { font-family: var(--font-family); line-height: 1.6; margin: 0; padding: 0; background-color: #fcfcfc; color: var(--text-color); }
+        .header { background: linear-gradient(135deg, var(--primary-color), var(--primary-hover)); color: var(--white-color); padding: 2rem 1rem; text-align: center; }
         .header h1 { margin: 0; font-size: 2.5em; }
         .container { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
         .quiz-section { background-color: var(--white-color); padding: 2rem; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); }
@@ -29,9 +30,10 @@
         .quiz-buttons button:disabled { cursor: not-allowed; opacity: 0.6; }
         .quiz-feedback { display: none; margin-top: 15px; padding: 10px; border-radius: 5px; }
         .quiz-feedback.correct { background-color: #e8f5e9; color: var(--success-color); }
-        .quiz-feedback.incorrect { background-color: #ffebee; color: var(--primary-color); }
+        .quiz-feedback.incorrect { background-color: var(--secondary-color); color: var(--primary-color); }
         .back-link { display: block; text-align: center; margin-top: 2rem; }
-        .back-link a { color: var(--primary-color); text-decoration: none; font-weight: bold; }
+        .back-link a { color: var(--primary-color); text-decoration: none; font-weight: bold; font-size: 1.1em; }
+        .back-link a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
