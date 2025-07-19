@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Interactiva sobre Vulvovaginitis</title>
+    <style>
+        :root {
+            --primary-color: #6a1b9a; /* Morado principal */
+            --secondary-color: #fce4ec; /* Rosa pálido */
+            --text-color: #333;
+            --light-text-color: #555;
+            --white-color: #ffffff;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: var(--text-color);
+        }
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), #ab47bc);
+            color: var(--white-color);
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom-left-radius: 50% 20%;
+            border-bottom-right-radius: 50% 20%;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.8em;
+            font-weight: 700;
+        }
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .intro-section {
+            background-color: var(--white-color);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .intro-section h2 {
+            color: var(--primary-color);
+            font-size: 2em;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .tab-button {
+            padding: 12px 25px;
+            cursor: pointer;
+            border: 2px solid var(--primary-color);
+            background-color: var(--white-color);
+            color: var(--primary-color);
+            font-size: 1.1em;
+            font-weight: 600;
+            margin: 5px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        .tab-button:hover, .tab-button.active {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(106, 27, 154, 0.3);
+        }
+        .content-section {
+            display: none;
+            background-color: var(--white-color);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+        .content-section.active {
+            display: block;
+        }
+        .content-section h2 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
+            font-size: 2.2em;
+        }
+        .flex-container {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        .flex-item {
+            flex: 1;
+            min-width: 300px;
+        }
+        .image-container {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .image-container img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        .image-container figcaption {
+            font-style: italic;
+            color: var(--light-text-color);
+            margin-top: 0.5rem;
+            font-size: 0.9em;
+        }
+        .symptom-list, .prevention-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .symptom-list li, .prevention-list li {
+            background-color: var(--secondary-color);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-left: 5px solid var(--primary-color);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+        .symptom-list .icon, .prevention-list .icon {
+            font-size: 1.5em;
+            margin-right: 15px;
+            color: var(--primary-color);
+        }
+        .medical-term {
+            background-color: #e1bee7;
+            padding: 2px 6px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: help;
+            position: relative;
+        }
+        .explanation {
+            visibility: hidden;
+            width: 250px;
+            background-color: var(--text-color);
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 10px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -125px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .explanation::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: var(--text-color) transparent transparent transparent;
+        }
+        .medical-term:hover .explanation {
+            visibility: visible;
+            opacity: 1;
+        }
+        .alert-its {
+            background-color: #fff3e0;
+            border: 2px solid #ff9800;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+        .alert-its h3 {
+            color: #e65100;
+            margin-top: 0;
+        }
+        .footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 2rem;
+            background-color: #333;
+            color: var(--white-color);
+        }
+        .footer p {
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2.2em; }
+            .header p { font-size: 1em; }
+            .flex-container { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>Entendiendo la Vulvovaginitis</h1>
+        <p>Una guía clara y sencilla para cuidar tu salud íntima</p>
+    </header>
+
+    <div class="container">
+
+        <section class="intro-section">
+            <h2>¿Qué es la Vulvovaginitis?</h2>
+            [cite_start]<p>La vulvovaginitis es simplemente la <strong>inflamación de la vulva y la vagina</strong>. [cite: 2] Aunque suena complicado, es una condición muy común. [cite_start]Imagina que es como una irritación o una "alergia" en tu zona íntima. [cite: 3] [cite_start]Generalmente ocurre por una infección, pero también puede ser causada por productos químicos o cambios hormonales. [cite: 3]</p>
+            [cite_start]<p>Sus síntomas más comunes son el <span class="medical-term">leucorrea<span class="explanation">Se refiere a cualquier flujo vaginal que sea anormal en cantidad, color u olor.</span></span> (flujo diferente al habitual), picazón, ardor y a veces dolor durante las relaciones sexuales. [cite: 4]</p>
+        </section>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="showContent('candida')">Candidiasis Vaginal</button>
+            <button class="tab-button" onclick="showContent('tricomona')">Tricomoniasis</button>
+            <button class="tab-button" onclick="showContent('prevencion')">Cuadro Comparativo y Prevención</button>
+        </div>
+
+        <section id="candida" class="content-section active">
+            <h2><span class="icon">🍄</span>Vulvovaginitis por Candida (Candidiasis)</h2>
+            [cite_start]<p>Es la infección vaginal por hongos más conocida. [cite: 7] [cite_start]Es causada por un hongo llamado <strong>Candida albicans</strong> en la mayoría de los casos. [cite: 7] [cite_start]Es importante saber que este hongo vive normalmente en nuestro cuerpo en pequeñas cantidades, el problema empieza cuando crece más de la cuenta. [cite: 21]</p>
+
+            <div class="flex-container">
+                <div class="flex-item">
+                    <h3>Cuadro Clínico: ¿Qué se siente?</h3>
+                    <ul class="symptom-list">
+                        <li><span class="icon">🔥</span><strong>Picazón Intensa:</strong> Es el síntoma principal y más molesto. [cite_start]Puede ser muy fuerte, especialmente por la noche, y afectar tanto la vulva como la vagina. [cite: 9, 10]</li>
+                        [cite_start]<li><span class="icon">⚪</span><strong>Flujo Blanco y Espeso:</strong> El flujo no suele tener olor. [cite: 11] [cite_start]Su apariencia es muy característica: blanco, espeso y con grumos, a menudo descrito como "leche cortada" o "requesón". [cite: 11]</li>
+                        [cite_start]<li><span class="icon">💧</span><strong>Ardor e Irritación:</strong> Una sensación de quemazón que puede empeorar al orinar o durante las relaciones sexuales (<span class="medical-term">dispareunia<span class="explanation">Término médico para el dolor durante las relaciones sexuales.</span></span>). [cite: 12]</li>
+                        [cite_start]<li><span class="icon">🔴</span><strong>Inflamación y Enrojecimiento:</strong> Al observar la zona, se puede ver la vulva y la vagina enrojecidas e hinchadas (<span class="medical-term">eritema y edema<span class="explanation">Eritema es enrojecimiento y edema es hinchazón. Son signos clásicos de inflamación.</span></span>). [cite: 13] [cite_start]A veces, por el rascado, pueden aparecer pequeñas heridas. [cite: 14]</li>
+                    </ul>
+                </div>
+                <div class="flex-item">
+                    <div class="image-container">
+                        <img src="images/VULVOVAGINITIS CANDIDIASICA.jpg" alt="Ilustración de Vulvovaginitis por Candida">
+                        <figcaption>Aspecto de la vulva inflamada por Candidiasis.</figcaption>
+                    </div>
+                    <div class="image-container">
+                        <img src="images/corrimento-candidiase-1.jpg" alt="Flujo característico de la candidiasis">
+                        <figcaption>Flujo vaginal típico, blanco y grumoso.</figcaption>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tricomona" class="content-section">
+            <h2><span class="icon">🦠</span>Vulvovaginitis por Tricomonas (Tricomoniasis)</h2>
+            [cite_start]<p>Esta infección es causada por un parásito microscópico llamado <strong>Trichomonas vaginalis</strong>. [cite: 34] [cite_start]A diferencia de la candidiasis, la tricomoniasis es una <strong>Infección de Transmisión Sexual (ITS)</strong>. [cite: 34]</p>
+            
+            <div class="flex-container">
+                <div class="flex-item">
+                    <h3>Cuadro Clínico: ¿Cuáles son las señales?</h3>
+                    <ul class="symptom-list">
+                        <li><span class="icon">🟢</span><strong>Flujo Anormal:</strong> El flujo es el protagonista. [cite_start]Suele ser abundante, más líquido, de color <strong>amarillo-verdoso</strong> y a veces con espuma o burbujas. [cite: 35]</li>
+                        [cite_start]<li><span class="icon">👃</span><strong>Mal Olor:</strong> A diferencia de la candidiasis, este flujo casi siempre viene acompañado de un olor desagradable. [cite: 36]</li>
+                        [cite_start]<li><span class="icon">💥</span><strong>Inflamación Severa:</strong> Provoca picazón y ardor muy intensos en la vulva y vagina. [cite: 38] [cite_start]El enrojecimiento y la hinchazón son bastante notorios. [cite: 39]</li>
+                        <li><span class="icon">🍓</span><strong>Signo de "Cuello en Fresa":</strong> En algunos casos, el médico puede observar puntitos rojos en el cuello del útero y la vagina, un signo muy específico llamado <span class="medical-term">colpitis en fresa<span class="explanation">Inflamación de la vagina con pequeñas hemorragias puntiformes que le dan un aspecto similar a una fresa. [cite_start]Solo se ve en un examen ginecológico.</span></span>. [cite: 42]</li>
+                    </ul>
+                </div>
+                <div class="flex-item">
+                    <div class="image-container">
+                        <img src="images/corrimento-tricomonas-1.jpg" alt="Flujo característico de la tricomoniasis">
+                        <figcaption>Flujo amarillento-verdoso y espumoso de la Tricomoniasis.</figcaption>
+                    </div>
+                    <div class="alert-its">
+                        <h3>¡Atención! Es una ITS</h3>
+                        [cite_start]<p>Al ser una Infección de Transmisión Sexual, es fundamental que si recibes este diagnóstico, <strong>todas tus parejas sexuales sean tratadas al mismo tiempo</strong>, aunque no tengan síntomas. [cite: 51] [cite_start]Esto es clave para evitar reinfectarse una y otra vez. [cite: 52]</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="prevencion" class="content-section">
+            <h2><span class="icon">🛡️</span>Cuadro Comparativo y Cómo Prevenir</h2>
+            <p>Entender las diferencias es el primer paso para saber cómo actuar. Aquí te dejamos un resumen y los mejores consejos de prevención.</p>
+            
+            <h3>Tabla Comparativa Rápida</h3>
+            <table style="width:100%; border-collapse: collapse; margin-bottom: 2rem;">
+                <tr style="background-color: var(--primary-color); color: white;">
+                    <th style="padding: 12px; text-align: left;">Característica</th>
+                    <th style="padding: 12px; text-align: left;">Candidiasis (Hongo)</th>
+                    <th style="padding: 12px; text-align: left;">Tricomoniasis (Parásito - ITS)</th>
+                </tr>
+                <tr style="background-color: #f1f1f1;">
+                    <td style="padding: 12px; border: 1px solid #ddd;"><strong>Tipo de Flujo</strong></td>
+                    [cite_start]<td style="padding: 12px; border: 1px solid #ddd;">Blanco, espeso, grumoso ("leche cortada"). [cite: 11]</td>
+                    [cite_start]<td style="padding: 12px; border: 1px solid #ddd;">Amarillo-verdoso, espumoso, abundante. [cite: 35]</td>
+                </tr>
+                <tr>
+                    <td style="padding: 12px; border: 1px solid #ddd;"><strong>Olor</strong></td>
+                    [cite_start]<td style="padding: 12px; border: 1px solid #ddd;">Generalmente sin olor. [cite: 11]</td>
+                    [cite_start]<td style="padding: 12px; border: 1px solid #ddd;">Mal olor frecuente. [cite: 36]</td>
+                </tr>
+                <tr style="background-color: #f1f1f1;">
+                    <td style="padding: 12px; border: 1px solid #ddd;"><strong>Síntoma Principal</strong></td>
+                    [cite_start]<td style="padding: 12px; border: 1px solid #ddd;">Picazón muy intensa. [cite: 9]</td>
+                    [cite_start]<td style="padding: 12px; border: 1px solid #ddd;">Flujo abundante y mal olor, con picazón y ardor. [cite: 35, 38]</td>
+                </tr>
+                <tr>
+                    <td style="padding: 12px; border: 1px solid #ddd;"><strong>Transmisión</strong></td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">No es una ITS. Por desequilibrio de la flora.</td>
+                    [cite_start]<td style="padding: 12px; border: 1px solid #ddd;">Sí, es una Infección de Transmisión Sexual. [cite: 34]</td>
+                </tr>
+            </table>
+
+            <h3>Estrategias de Prevención Clave</h3>
+            <div class="flex-container">
+                <div class="flex-item">
+                    <h4>Para AMBAS condiciones:</h4>
+                    <ul class="prevention-list">
+                        [cite_start]<li><span class="icon">🌿</span><strong>Higiene Íntima Suave:</strong> Usa jabones neutros solo en la parte externa (la vulva). [cite: 31] ¡Nunca hagas duchas vaginales! [cite_start]Alteran tu defensa natural. [cite: 32]</li>
+                        <li><span class="icon">🌬️</span><strong>Evita la Humedad:</strong> Sécate muy bien después de la ducha o de nadar. [cite_start]No te quedes con el traje de baño húmedo o la ropa de ejercicio sudada por mucho tiempo. [cite: 28, 29]</li>
+                        <li><span class="icon">COTTON</span><strong>Prefiere Ropa de Algodón:</strong> La ropa interior de algodón permite que la piel respire. [cite_start]Evita materiales sintéticos y ropa muy ajustada que guardan calor y humedad. [cite: 30]</li>
+                    </ul>
+                </div>
+                <div class="flex-item">
+                    <h4>Específico para TRICOMONIASIS (y otras ITS):</h4>
+                    <ul class="prevention-list">
+                         <li><span class="icon">🛡️</span><strong>Usa Preservativo (Condón):</strong> Es la forma más eficaz de prevenir la transmisión. [cite_start]Úsalo siempre y correctamente en todo tipo de contacto sexual. [cite: 49]</li>
+                        <li><span class="icon">❤️</span><strong>Tratamiento en Pareja(s):</strong> Si te diagnostican, tu(s) pareja(s) sexual(es) deben tratarse también, sí o sí. [cite_start]Es la única manera de cortar el ciclo de reinfección. [cite: 51]</li>
+                        [cite_start]<li><span class="icon">🗣️</span><strong>Comunicación y Abstinencia:</strong> Habla con tus parejas para que se hagan un chequeo. [cite: 53] [cite_start]Evita las relaciones sexuales hasta que todos hayan completado el tratamiento. [cite: 55]</li>
+                    </ul>
+                </div>
+            </div>
+             <h3>Factores de Riesgo para Candidiasis</h3>
+             <p>Algunas situaciones pueden hacerte más propensa a tener una infección por hongos:</p>
+             <ul class="prevention-list">
+                 <li><span class="icon">💊</span><strong>Uso de Antibióticos:</strong> Pueden eliminar las bacterias "buenas" que mantienen a raya a los hongos. [cite_start]Tómalos solo si te los receta un médico. [cite: 23]</li>
+                 [cite_start]<li><span class="icon">🍬</span><strong>Diabetes no Controlada:</strong> El exceso de azúcar en el cuerpo favorece el crecimiento de la Candida. [cite: 22]</li>
+                 [cite_start]<li><span class="icon">📉</span><strong>Sistema Inmune Débil:</strong> El uso de corticoides o tener defensas bajas puede facilitar la infección. [cite: 24]</li>
+             </ul>
+        </section>
+
+    </div>
+
+    <footer class="footer">
+        <p>Esta página es una guía informativa y no reemplaza la consulta médica. Si tienes síntomas, acude a un profesional de la salud.</p>
+        <p>Proyecto informativo creado con la ayuda de Gemini. 2024.</p>
+    </footer>
+
+    <script>
+        function showContent(contentId) {
+            // Ocultar todas las secciones de contenido
+            var contentSections = document.querySelectorAll('.content-section');
+            contentSections.forEach(function(section) {
+                section.classList.remove('active');
+            });
+
+            // Desactivar todos los botones
+            var tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(function(button) {
+                button.classList.remove('active');
+            });
+
+            // Mostrar la sección de contenido seleccionada
+            document.getElementById(contentId).classList.add('active');
+
+            // Activar el botón seleccionado
+            document.querySelector('.tab-button[onclick="showContent(\'' + contentId + '\')"]').classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
