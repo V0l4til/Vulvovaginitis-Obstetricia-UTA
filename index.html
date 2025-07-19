@@ -6,21 +6,21 @@
     <title>Guía sobre Vulvovaginitis - Obstetricia y Puericultura UTA</title>
     <style>
         :root {
-            --primary-color: #c62828; /* Rojo Principal */
-            --secondary-color: #ffebee; /* Rojo Pálido */
-            --text-color: #333;
-            --light-text-color: #555;
+            --primary-color: #B71C1C;      /* Rojo Oscuro Principal */
+            --primary-hover: #D32F2F;     /* Rojo Medio para Hover/Gradiente */
+            --secondary-color: #FFEBEE;   /* Rojo Pálido para Fondos */
+            --text-color: #212121;       /* Gris Oscuro para Texto */
             --white-color: #ffffff;
             --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             --success-color: #2e7d32;
-            --error-color: #c62828;
+            --error-color: #B71C1C;
         }
         body {
             font-family: var(--font-family); line-height: 1.6; margin: 0;
-            padding: 0; background-color: #f9f9f9; color: var(--text-color);
+            padding: 0; background-color: #fcfcfc; color: var(--text-color);
         }
         .header {
-            background: linear-gradient(135deg, var(--primary-color), #ef5350);
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
             color: var(--white-color); padding: 2rem 1rem; text-align: center;
             border-bottom-left-radius: 50% 20%; border-bottom-right-radius: 50% 20%;
         }
@@ -44,7 +44,7 @@
         }
         .tab-button:hover, .tab-button.active {
             background-color: var(--primary-color); color: var(--white-color);
-            transform: translateY(-3px); box-shadow: 0 4px 15px rgba(198, 40, 40, 0.4);
+            transform: translateY(-3px); box-shadow: 0 4px 15px rgba(183, 28, 28, 0.4);
         }
         .tab-content { display: none; }
         .tab-content.active { display: block; }
@@ -52,7 +52,7 @@
         .flex-item { flex: 1; min-width: 300px; }
         .image-container img {
             max-width: 100%; border-radius: 10px; box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-            cursor: pointer; transition: transform 0.2s;
+            cursor: pointer; transition: transform 0.2s; margin-top: 1rem;
         }
         .image-container img:hover { transform: scale(1.05); }
         .symptom-list, .prevention-list { list-style: none; padding-left: 0; }
@@ -80,7 +80,7 @@
             padding: 15px 30px; border-radius: 30px; text-decoration: none; font-size: 1.2em;
             font-weight: bold; transition: all 0.3s ease;
         }
-        .quiz-cta-section a:hover { background-color: #e53935; transform: scale(1.05); }
+        .quiz-cta-section a:hover { background-color: var(--primary-hover); transform: scale(1.05); }
         .lightbox {
             display: none; position: fixed; z-index: 1000; padding-top: 60px;
             left: 0; top: 0; width: 100%; height: 100%; overflow: auto;
@@ -101,11 +101,10 @@
     </header>
 
     <div class="container">
-
         <section class="intro-section">
             <h2>¿Qué es la Vulvovaginitis?</h2>
-            [cite_start]<p>La **vulvovaginitis** se define como la **inflamación de la vulva y la vagina**. [cite: 2] Es una de las condiciones más comunes en la práctica ginecológica y puede afectar a mujeres de todas las edades. [cite_start]Generalmente, es causada por una infección, pero también puede deberse a irritantes químicos, alérgenos o cambios hormonales. [cite: 3]</p>
-            [cite_start]<p>Sus síntomas más comunes son el flujo vaginal anormal (leucorrea), picazón (prurito), ardor o dolor. [cite: 4] Entender sus causas y cómo prevenirla es clave para el bienestar íntimo.</p>
+            <p>La <strong>vulvovaginitis</strong> se define como la <strong>inflamación de la vulva y la vagina</strong>. Es una de las condiciones más comunes en la práctica ginecológica y puede afectar a mujeres de todas las edades. Generalmente, es causada por una infección, pero también puede deberse a irritantes químicos, alérgenos o cambios hormonales.</p>
+            <p>Sus síntomas más comunes son el flujo vaginal anormal (leucorrea), picazón (prurito), ardor o dolor. Entender sus causas y cómo prevenirla es clave para el bienestar íntimo.</p>
         </section>
         
         <section class="content-section">
@@ -117,39 +116,39 @@
 
             <div id="candida" class="tab-content active">
                 <h2><span class="icon">🍄</span>Vulvovaginitis por Candida</h2>
-                <p>Es la infección vaginal por hongos más conocida. [cite_start]Es causada por el hongo **Candida albicans** en el 80-90% de los casos. [cite: 7] [cite_start]Se estima que el **75% de las mujeres** presenta al menos un episodio a lo largo de su vida. [cite: 16]</p>
+                <p>Es la infección vaginal por hongos más conocida. Es causada por el hongo <strong>Candida albicans</strong> en el 80-90% de los casos. Se estima que el <strong>75% de las mujeres</strong> presenta al menos un episodio a lo largo de su vida.</p>
                 <div class="flex-container">
                     <div class="flex-item">
                         <h3>Cuadro Clínico: ¿Qué se siente?</h3>
                         <ul class="symptom-list">
-                            [cite_start]<li><span class="icon">🔥</span><div><strong>Picazón Intensa:</strong> Es el síntoma principal y más molesto. [cite: 9]</div></li>
-                            [cite_start]<li><span class="icon">⚪</span><div><strong>Flujo Blanco y Espeso:</strong> Típicamente sin olor, descrito como "leche cortada" o "requesón". [cite: 11]</div></li>
-                            [cite_start]<li><span class="icon">💧</span><div><strong>Ardor e Irritación:</strong> Sensación de quemazón que puede empeorar al orinar o durante las relaciones sexuales. [cite: 12]</div></li>
-                            [cite_start]<li><span class="icon">🔴</span><div><strong>Inflamación y Enrojecimiento:</strong> La vulva y la vagina se observan enrojecidas e hinchadas, a veces con fisuras por el rascado. [cite: 13, 14]</div></li>
+                            <li><span class="icon">🔥</span><div><strong>Picazón Intensa:</strong> Es el síntoma principal y más molesto.</div></li>
+                            <li><span class="icon">⚪</span><div><strong>Flujo Blanco y Espeso:</strong> Típicamente sin olor, descrito como "leche cortada" o "requesón".</div></li>
+                            <li><span class="icon">💧</span><div><strong>Ardor e Irritación:</strong> Sensación de quemazón que puede empeorar al orinar o durante las relaciones sexuales.</div></li>
+                            <li><span class="icon">🔴</span><div><strong>Inflamación y Enrojecimiento:</strong> La vulva y la vagina se observan enrojecidas e hinchadas, a veces con fisuras por el rascado.</div></li>
                         </ul>
                     </div>
                     <div class="flex-item image-container">
-                        <img src="https://i.imgur.com/83u0zC9.jpg" alt="Vulvovaginitis por Candida" class="lightbox-trigger">
-                        <img src="https://i.imgur.com/K3ZGLWf.jpg" alt="Flujo de candidiasis" class="lightbox-trigger">
+                        <img src="images/VULVOVAGINITIS CANDIDIASICA.jpg" alt="Vulvovaginitis por Candida" class="lightbox-trigger">
+                        <img src="images/corrimento-candidiase-1.jpg" alt="Flujo de candidiasis" class="lightbox-trigger">
                     </div>
                 </div>
             </div>
 
             <div id="tricomona" class="tab-content">
                 <h2><span class="icon">🦠</span>Vulvovaginitis por Tricomonas</h2>
-                [cite_start]<p>Es una **Infección de Transmisión Sexual (ITS)** causada por el parásito Trichomonas vaginalis. [cite: 34] [cite_start]Es la ITS no viral más común en el mundo. [cite: 44]</p>
+                <p>Es una <strong>Infección de Transmisión Sexual (ITS)</strong> causada por el parásito Trichomonas vaginalis. Es la ITS no viral más común en el mundo.</p>
                 <div class="flex-container">
                     <div class="flex-item">
                         <h3>Cuadro Clínico: ¿Cuáles son las señales?</h3>
                         <ul class="symptom-list">
-                            [cite_start]<li><span class="icon">🟢</span><div><strong>Flujo Anormal:</strong> Abundante, fluido, de color amarillo-verdoso y a menudo espumoso o con burbujas. [cite: 35]</div></li>
-                            [cite_start]<li><span class="icon">👃</span><div><strong>Mal Olor:</strong> A diferencia de la candidiasis, este flujo casi siempre viene acompañado de un olor desagradable. [cite: 36]</div></li>
-                            [cite_start]<li><span class="icon">💥</span><div><strong>Inflamación Severa:</strong> Provoca picazón y ardor muy intensos, con enrojecimiento y hinchazón evidentes. [cite: 38, 39]</div></li>
-                             [cite_start]<li><span class="icon">🍓</span><div><strong>Signo de "Cuello en Fresa":</strong> En un examen ginecológico, a veces se observan puntitos rojos en el cuello del útero, un signo muy específico de esta infección. [cite: 42]</div></li>
+                            <li><span class="icon">🟢</span><div><strong>Flujo Anormal:</strong> Abundante, fluido, de color amarillo-verdoso y a menudo espumoso o con burbujas.</div></li>
+                            <li><span class="icon">👃</span><div><strong>Mal Olor:</strong> A diferencia de la candidiasis, este flujo casi siempre viene acompañado de un olor desagradable.</div></li>
+                            <li><span class="icon">💥</span><div><strong>Inflamación Severa:</strong> Provoca picazón y ardor muy intensos, con enrojecimiento y hinchazón evidentes.</div></li>
+                             <li><span class="icon">🍓</span><div><strong>Signo de "Cuello en Fresa":</strong> En un examen ginecológico, a veces se observan puntitos rojos en el cuello del útero, un signo muy específico de esta infección.</div></li>
                         </ul>
                     </div>
                     <div class="flex-item image-container">
-                         <img src="https://i.imgur.com/qLwGxqR.jpg" alt="Flujo de tricomoniasis" class="lightbox-trigger">
+                         <img src="images/corrimento-tricomonas-1.jpg" alt="Flujo de tricomoniasis" class="lightbox-trigger">
                     </div>
                 </div>
             </div>
@@ -160,16 +159,16 @@
                     <div class="flex-item">
                         <h4>Prevención General y para Candidiasis</h4>
                         <ul class="prevention-list">
-                            <li><span class="icon">🌿</span><div><strong>Higiene Íntima Suave:</strong> Usa jabones de pH neutro solo en la parte externa. [cite_start]Evita las duchas vaginales, ya que alteran tus defensas naturales. [cite: 32]</div></li>
-                            [cite_start]<li><span class="icon">🌬️</span><div><strong>Evita la Humedad Excesiva:</strong> Sécate muy bien y no permanezcas con ropa húmeda o sudada por mucho tiempo. [cite: 28, 29]</div></li>
-                            [cite_start]<li><span class="icon">👕</span><div><strong>Prefiere Ropa de Algodón:</strong> Utiliza ropa interior de algodón y evita prendas muy ajustadas o de materiales sintéticos para una mejor ventilación. [cite: 30]</div></li>
+                            <li><span class="icon">🌿</span><div><strong>Higiene Íntima Suave:</strong> Usa jabones de pH neutro solo en la parte externa. Evita las duchas vaginales, ya que alteran tus defensas naturales.</div></li>
+                            <li><span class="icon">🌬️</span><div><strong>Evita la Humedad Excesiva:</strong> Sécate muy bien y no permanezcas con ropa húmeda o sudada por mucho tiempo.</div></li>
+                            <li><span class="icon">👕</span><div><strong>Prefiere Ropa de Algodón:</strong> Utiliza ropa interior de algodón y evita prendas muy ajustadas o de materiales sintéticos para una mejor ventilación.</div></li>
                         </ul>
                     </div>
                     <div class="flex-item">
                         <h4>Prevención Específica para Tricomoniasis (ITS)</h4>
                         <ul class="prevention-list">
-                             [cite_start]<li><span class="icon">🛡️</span><div><strong>Usa Preservativo:</strong> Es la medida más eficaz para prevenir la transmisión de esta y otras ITS. [cite: 49]</div></li>
-                            [cite_start]<li><span class="icon">❤️</span><div><strong>Tratamiento de Pareja(s):</strong> Es crucial y obligatorio tratar a todas las parejas sexuales simultáneamente, aunque no tengan síntomas, para evitar la reinfección. [cite: 51, 52]</div></li>
+                             <li><span class="icon">🛡️</span><div><strong>Usa Preservativo:</strong> Es la medida más eficaz para prevenir la transmisión de esta y otras ITS.</div></li>
+                            <li><span class="icon">❤️</span><div><strong>Tratamiento de Pareja(s):</strong> Es crucial y obligatorio tratar a todas las parejas sexuales simultáneamente, aunque no tengan síntomas, para evitar la reinfección.</div></li>
                         </ul>
                     </div>
                 </div>
@@ -193,7 +192,6 @@
                 <div class="faq-answer"><p>Es muy poco probable. La tricomoniasis se transmite casi exclusivamente por contacto sexual. La candidiasis es un sobrecrecimiento de hongos que ya tienes. Sin embargo, la humedad prolongada por un traje de baño mojado sí es un factor de riesgo para la candidiasis, pero no por contagio desde el agua.</p></div>
             </div>
         </section>
-
     </div>
 
     <footer class="footer">
