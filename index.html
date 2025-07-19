@@ -61,7 +61,7 @@
             visibility: hidden; width: 250px; background-color: var(--text-color);
             color: #fff; text-align: center; border-radius: 6px; padding: 10px;
             position: absolute; z-index: 10; bottom: 125%; left: 50%;
-            margin-left: -125px; opacity: 0; transition: opacity 0.3s;
+            margin-left: -125px; opacity: 0; transition: opacity 0.3s; font-size: 0.9em; line-height: 1.4;
         }
         .explanation::after {
             content: ""; position: absolute; top: 100%; left: 50%; margin-left: -5px;
@@ -83,9 +83,9 @@
         .sensitive-image-container.loaded p { display: none; }
         .image-container img {
             max-width: 100%; border-radius: 10px; box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-            display: none; /* Ocultar inicialmente */
+            display: none;
         }
-        .image-container img.loaded { display: block; /* Mostrar al cargar */ }
+        .image-container img.loaded { display: block; }
 
         .symptom-list, .prevention-list { list-style: none; padding-left: 0; }
         .symptom-list li, .prevention-list li {
@@ -113,14 +113,6 @@
             font-weight: bold; transition: all 0.3s ease;
         }
         .quiz-cta-section a:hover { background-color: var(--primary-hover); transform: scale(1.05); }
-        .lightbox {
-            display: none; position: fixed; z-index: 1000; padding-top: 60px;
-            left: 0; top: 0; width: 100%; height: 100%; overflow: auto;
-            background-color: rgba(0,0,0,0.9);
-        }
-        .lightbox-content { margin: auto; display: block; width: 80%; max-width: 700px; animation: zoom 0.6s; }
-        @keyframes zoom { from {transform:scale(0)} to {transform:scale(1)} }
-        .lightbox-close { position: absolute; top: 15px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; transition: 0.3s; cursor: pointer; }
         .footer { text-align: center; padding: 2rem 1rem; margin-top: 2rem; background-color: #333; color: var(--white-color); }
         .footer p { margin: 0.5rem 0; }
     </style>
@@ -136,7 +128,7 @@
         <section class="intro-section">
             <h2>¿Qué es la Vulvovaginitis?</h2>
             <p>La <strong>vulvovaginitis</strong> se define como la <strong>inflamación de la vulva y la vagina</strong>. Es una de las condiciones más comunes en la práctica ginecológica y puede afectar a mujeres de todas las edades. Generalmente, es causada por una infección, pero también puede deberse a irritantes químicos, alérgenos o cambios hormonales.</p>
-            <p>Sus síntomas más comunes son el flujo vaginal anormal (<span class="medical-term">leucorrea<span class="explanation">Se refiere a cualquier flujo vaginal que sea anormal en cantidad, color, consistencia u olor.</span></span>), picazón (prurito), ardor o dolor. Entender sus causas y cómo prevenirla es clave para el bienestar íntimo.</p>
+            <p>Sus síntomas más comunes son la <span class="medical-term">leucorrea<span class="explanation">Se refiere a cualquier flujo vaginal que sea anormal en cantidad, color, consistencia u olor.</span></span>, el <span class="medical-term">prurito<span class="explanation">Término médico para referirse a la picazón.</span></span>, el ardor o el dolor. Entender sus causas y cómo prevenirla es clave para el bienestar íntimo.</p>
         </section>
         
         <section class="content-section">
@@ -155,8 +147,8 @@
                         <ul class="symptom-list">
                             <li><span class="icon">🔥</span><div><strong>Picazón Intensa:</strong> Es el síntoma principal y más molesto.</div></li>
                             <li><span class="icon">⚪</span><div><strong>Flujo Blanco y Espeso:</strong> Típicamente sin olor, descrito como "leche cortada" o "requesón".</div></li>
-                            <li><span class="icon">💧</span><div><strong>Ardor e Irritación:</strong> Sensación de quemazón que puede empeorar al orinar o durante las relaciones sexuales (<span class="medical-term">dispareunia<span class="explanation">Término médico para el dolor durante o después de las relaciones sexuales.</span></span>).</div></li>
-                            <li><span class="icon">🔴</span><div><strong>Inflamación y Enrojecimiento:</strong> La vulva y la vagina se observan enrojecidas e hinchadas (<span class="medical-term">eritema y edema<span class="explanation">Eritema es enrojecimiento y edema es hinchazón. Son signos clásicos de inflamación.</span></span>), a veces con fisuras por el rascado.</div></li>
+                            <li><span class="icon">💧</span><div><strong>Ardor e Irritación:</strong> Sensación de quemazón que puede empeorar al orinar o manifestarse como <span class="medical-term">dispareunia<span class="explanation">Término médico para el dolor durante o después de las relaciones sexuales.</span></span>.</div></li>
+                            <li><span class="icon">🔴</span><div><strong>Inflamación:</strong> Se puede observar <span class="medical-term">eritema y edema<span class="explanation">Eritema es enrojecimiento y edema es hinchazón. Son signos clásicos de inflamación.</span></span> en la vulva y la vagina, a veces con fisuras por el rascado.</div></li>
                         </ul>
                     </div>
                     <div class="flex-item">
@@ -188,7 +180,7 @@
                             <li><span class="icon">🟢</span><div><strong>Flujo Anormal:</strong> Abundante, fluido, de color amarillo-verdoso y a menudo espumoso.</div></li>
                             <li><span class="icon">👃</span><div><strong>Mal Olor:</strong> A diferencia de la candidiasis, este flujo casi siempre viene acompañado de un olor desagradable.</div></li>
                             <li><span class="icon">💥</span><div><strong>Inflamación Severa:</strong> Provoca picazón y ardor muy intensos, con enrojecimiento y hinchazón evidentes.</div></li>
-                             <li><span class="icon">🍓</span><div><strong>Signo de "Cuello en Fresa":</strong> En un examen ginecológico, a veces se observan puntitos rojos en el cuello del útero (<span class="medical-term">colpitis en fresa<span class="explanation">Inflamación de la vagina con pequeñas hemorragias puntiformes que le dan un aspecto similar a una fresa. Solo se ve en un examen ginecológico.</span></span>).</div></li>
+                             <li><span class="icon">🍓</span><div><strong>Signo Clásico:</strong> En un examen ginecológico, a veces se puede observar el signo de la <span class="medical-term">colpitis en fresa<span class="explanation">Inflamación de la vagina con pequeñas hemorragias puntiformes que le dan un aspecto similar a una fresa. Solo se ve en un examen ginecológico.</span></span>.</div></li>
                         </ul>
                     </div>
                     <div class="flex-item">
@@ -235,7 +227,7 @@
             <h3>Preguntas Frecuentes</h3>
             <div class="faq-item">
                 <button class="faq-button">¿Si tengo picazón, es siempre por hongos (candidiasis)?</button>
-                <div class="faq-answer"><p>No necesariamente. Aunque la picazón intensa es el síntoma más común de la candidiasis, también es un síntoma clave de la tricomoniasis y otras condiciones. Por eso es tan importante no autodiagnosticarse y consultar a un profesional.</p></div>
+                <div class="faq-answer"><p>No necesariamente. Aunque el prurito intenso es el síntoma más común de la candidiasis, también es un síntoma clave de la tricomoniasis y otras condiciones. Por eso es tan importante no autodiagnosticarse y consultar a un profesional.</p></div>
             </div>
             <div class="faq-item">
                 <button class="faq-button">¿Puedo contagiarme en un baño público o una piscina?</button>
@@ -292,9 +284,9 @@
                 imgElement.src = imgElement.dataset.src;
                 imgElement.classList.add('loaded');
                 container.classList.add('loaded');
-                container.onclick = null; // Desactiva clics futuros en el contenedor
+                container.onclick = null;
             };
-            window.loadSensitiveImage = loadSensitiveImage; // Hace la función accesible globalmente para el onclick
+            window.loadSensitiveImage = loadSensitiveImage;
         });
     </script>
 </body>
